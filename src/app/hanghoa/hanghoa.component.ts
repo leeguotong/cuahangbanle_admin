@@ -19,7 +19,8 @@ export class HanghoaComponent implements OnInit{
 	data: any[] = [];
 	hanghoa = {
 			    tenHang:'',
-			    donGia: 0
+			    donGia: 0,
+				hinh: null
 		  	};
 	
 	ngOnInit(): void {
@@ -35,7 +36,8 @@ export class HanghoaComponent implements OnInit{
 	postData() {
 	  const hanghoadt = {
 	    tenHang: this.hanghoa.tenHang,
-	    donGia: this.hanghoa.donGia
+	    donGia: this.hanghoa.donGia,
+		hinh:this.hanghoa.hinh
 	  };
 	
 	  const jsonBody = JSON.stringify(hanghoadt);
@@ -53,7 +55,6 @@ export class HanghoaComponent implements OnInit{
 	        // Xử lý trường hợp không thành công
 	        console.error('Lỗi khi thêm hàng hóa:', response);
 	      }
-	     
 	    },
 	    (error: any) => {
 	      // Xử lý lỗi nếu có
@@ -86,7 +87,7 @@ export class HanghoaComponent implements OnInit{
 		        console.error(error); // Xử lý lỗi từ API
 		      }
 		 );
-}
+	}
 	
 	updateData(mahh: any) {
 	 const hanghoadt = {
