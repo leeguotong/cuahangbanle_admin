@@ -1,0 +1,40 @@
+<h1>Danh sách Kho</h1>
+<div class="container">
+<div class="header_container">
+	<form (ngSubmit)="postData()">
+	  <div class="form-group">
+	  <label for="tensp" class="lb_hh">Tên Kho</label>   
+	    <input type="text" class="form-control" id="tenkho" [(ngModel)]="kho.tenKho"  [ngModelOptions]="{standalone: true}">
+	  </div>
+	  <div class="form-group">
+	    <label for="donGia" class="lb_hh">Địa chỉ</label>
+	    <input type="text" class="form-control" id="diachi" [(ngModel)]="kho.diaChi" [ngModelOptions]="{standalone: true}">
+	  </div>
+	  <button type="submit" class="btn btn-primary">Thêm</button>
+	</form>
+</div>
+
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th>Mã Kho</th>
+	      <th>Tên Kho</th>
+	      <th>Địa chỉ</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr *ngFor="let kho of data">
+	      <td>{{ kho.makho }}</td>
+	      <td>{{ kho.tenkho }}</td>
+	      <td>{{ kho.diachi }}</td>   
+	      <td>
+	        <button class="btn_item" >Xóa</button>
+	        <button class="btn_item">Chỉnh sửa</button>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+</div>
+
+
+

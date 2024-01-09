@@ -1,0 +1,47 @@
+<!-- <div class="login">
+<h1>Đăng nhập</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Tên đăng nhập" [(ngModel)]="user.username" [ngModelOptions]="{standalone: true}">
+  <input type="password" placeholder="Mật khẩu" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"><br/>
+  <button type="submit">Đăng nhập</button>
+</form></div> -->
+<head>
+  <link rel="stylesheet" href="signin.css">
+</head>
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+<main class="form-signin text-center">
+  <form (ngSubmit)="onSubmit()">
+      <h1 class="h3 mb-3 fw-normal">Đăng nhập</h1>
+
+      <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput" placeholder="Username" [(ngModel)]="user.username" [ngModelOptions]="{standalone: true}">
+          <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+          <label for="floatingPassword">Password</label>
+      </div>
+      <div class="checkbox mb-3">
+          <label>
+              <input type="checkbox" value="remember-me" name="chkRemember"> Ghi nhớ đăng nhập
+          </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Đăng nhập</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2020–2024</p>
+  </form>
+</main>
